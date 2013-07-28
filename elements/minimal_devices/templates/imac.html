@@ -1,0 +1,33 @@
+<polymer-element name="apple-imac" attributes="glare src">
+	<template>
+		<link rel="stylesheet" href="../css/imac.css" />
+
+		<div class="md-imac md-{{glare && 'glare'}}">
+			<div class="md-body">
+				<div class="md-top">
+					<div class="md-camera"></div>
+
+					<div class="md-screen">
+						<content />
+					</div>
+				</div>
+			</div>
+
+			<div class="md-base">
+				<div class="md-stand"></div>
+				<div class="md-foot"></div>
+			</div>
+		</div>
+	</template>
+
+	<script>
+		Polymer('apple-imac', {
+			glare: false,
+			ready: function () {
+				if (this.src) {
+					this.innerHTML = '<iframe seamless="seamless" height="100%" width="100%" src="' + this.src + '"></iframe>';
+				}
+			}
+		});
+	</script>
+</polymer-element>

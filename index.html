@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/ >
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Polymer Test</title>
+		<script src="/vendor/polymer-all/polymer/polymer.js"></script>
+
+		<link rel="import" href="/elements/minimal_devices/templates/imac.html" />
+		<link rel="import" href="/elements/minimal_devices/templates/ipad.html" />
+		<link rel="import" href="/elements/minimal_devices/templates/iphone.html" />
+		<link rel="import" href="/elements/minimal_devices/templates/macbook.html" />
+
+		<style type="text/css">
+			.idevice p {
+				background-color: white;
+				color: black;
+			}
+			.idevice .landscape {
+				-moz-transform: rotate(-90deg);
+				-o-transform: rotate(-90deg);
+				-webkit-transform: rotate(-90deg);
+				transform: rotate(-90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- http://labs.jaredhardy.com/minimal-devices/ -->
+
+		<apple-iphone class="idevice" src="http://www.isittheweekendyet.com/"></apple-iphone>
+		<apple-iphone class="idevice" color="white" glare="true"><p>Inner content gets replaced by an iframe if src attribute is present.</p></apple-iphone>
+
+		<apple-ipad class="idevice" src="http://www.isittheweekendyet.com/"></apple-ipad>
+		<apple-ipad class="idevice" color="white" glare="true"><p>Inner content gets replaced by an iframe if src attribute is present.</p></apple-ipad>
+
+		<apple-macbook class="idevice" src="http://www.isittheweekendyet.com/"></apple-macbook>
+		<apple-macbook class="idevice" glare="true"><p>Inner content gets replaced by an iframe if src attribute is present.</p></apple-macbook>
+
+		<apple-imac class="idevice" src="http://www.isittheweekendyet.com/"></apple-imac>
+		<apple-imac class="idevice" glare="true"><p>Inner content gets replaced by an iframe if src attribute is present.</p></apple-imac>
+	</body>
+</html>

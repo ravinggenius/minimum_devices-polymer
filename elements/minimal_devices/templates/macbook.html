@@ -1,0 +1,27 @@
+<polymer-element name="apple-macbook" attributes="glare src">
+	<template>
+		<link rel="stylesheet" href="../css/macbook.css" />
+
+		<div class="md-macbook-pro md-{{glare && 'glare'}}">
+			<div class="md-lid">
+				<div class="md-camera"></div>
+
+				<div class="md-screen">
+					<content />
+				</div>
+			</div>
+			<div class="md-base"></div>
+		</div>
+	</template>
+
+	<script>
+		Polymer('apple-macbook', {
+			glare: false,
+			ready: function () {
+				if (this.src) {
+					this.innerHTML = '<iframe seamless="seamless" height="100%" width="100%" src="' + this.src + '"></iframe>';
+				}
+			}
+		});
+	</script>
+</polymer-element>
